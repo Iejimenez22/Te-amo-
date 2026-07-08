@@ -1,0 +1,299 @@
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Segoe UI',sans-serif;
+}
+
+html{
+    scroll-behavior:smooth;
+}
+
+body{
+    min-height:100vh;
+    display:flex;
+    flex-direction:column;
+    align-items:center;
+    overflow-x:hidden;
+    background:radial-gradient(circle at top,#5b21b6,#220033,#050010);
+}
+
+
+/* Estrellas de fondo */
+
+body::before{
+    content:"";
+    position:fixed;
+    inset:0;
+    width:200%;
+    height:200%;
+
+    background-image:
+    radial-gradient(white 1px,transparent 1px),
+    radial-gradient(#b388ff 1px,transparent 1px);
+
+    background-size:
+    60px 60px,
+    90px 90px;
+
+    opacity:.35;
+    animation:estrellas 35s linear infinite;
+}
+
+
+@keyframes estrellas{
+
+    from{
+        transform:translateY(0);
+    }
+
+    to{
+        transform:translateY(-500px);
+    }
+
+}
+
+
+/* Caja principal */
+
+.caja{
+
+    position:relative;
+    z-index:2;
+
+    margin-top:100px;
+
+    width:90%;
+    max-width:520px;
+
+    padding:40px;
+
+    border-radius:25px;
+
+    background:rgba(255,255,255,.08);
+
+    backdrop-filter:blur(15px);
+
+    box-shadow:
+    0 0 20px #8b5cf6,
+    0 0 50px rgba(139,92,246,.3);
+
+    text-align:center;
+
+    animation:entrada .8s;
+
+}
+
+
+@keyframes entrada{
+
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+
+h1{
+
+    color:white;
+
+    font-size:2rem;
+
+    margin-bottom:35px;
+
+    text-shadow:
+    0 0 20px #a855f7;
+
+}
+
+
+
+/* Botones */
+
+.botones{
+
+    display:flex;
+
+    justify-content:center;
+
+    gap:18px;
+
+    flex-wrap:wrap;
+
+}
+
+
+button{
+
+    border:none;
+
+    border-radius:50px;
+
+    padding:15px 35px;
+
+    font-size:20px;
+
+    cursor:pointer;
+
+    transition:.35s;
+
+}
+
+
+#si{
+
+    background:#8b5cf6;
+
+    color:white;
+
+    box-shadow:
+    0 0 20px #8b5cf6;
+
+}
+
+
+#no{
+
+    background:#2d2d2d;
+
+    color:white;
+
+}
+
+
+
+/* Pantalla final */
+
+.final{
+
+    animation:aparecer 1s;
+
+}
+
+
+@keyframes aparecer{
+
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+
+}
+
+
+.final h1{
+
+    font-size:3rem;
+
+    color:#d8b4fe;
+
+    text-shadow:
+    0 0 20px #c084fc;
+
+}
+
+
+.final p{
+
+    color:white;
+
+    font-size:1.2rem;
+
+    line-height:1.6;
+
+}
+
+
+
+/* Corazones */
+
+.corazon{
+
+    position:fixed;
+
+    bottom:-40px;
+
+    pointer-events:none;
+
+    animation:subir 5s linear forwards;
+
+}
+
+
+@keyframes subir{
+
+    0%{
+        transform:translateY(0) scale(.7);
+        opacity:0;
+    }
+
+    15%{
+        opacity:1;
+    }
+
+    100%{
+        transform:translateY(-110vh) scale(1.5);
+        opacity:0;
+    }
+
+}
+
+
+
+/* Snoopy */
+
+.snoopy{
+
+    position:relative;
+
+    z-index:2;
+
+    width:100%;
+
+    display:flex;
+
+    justify-content:center;
+
+    align-items:center;
+
+    padding:100px 20px;
+
+    margin-top:200px;
+
+}
+
+
+.snoopy img{
+
+    width:280px;
+
+    max-width:90%;
+
+    animation:flotar 3s ease-in-out infinite;
+
+}
+
+
+@keyframes flotar{
+
+    0%,100%{
+        transform:translateY(0);
+    }
+
+    50%{
+        transform:translateY(-15px);
+    }
+
+}
